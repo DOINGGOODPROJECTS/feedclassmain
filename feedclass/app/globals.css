@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --fc-ink: #0f172a;
+  --fc-muted: #475569;
+  --fc-brand: #a16207;
+  --fc-brand-strong: #92400e;
+  --fc-sand: #fffbeb;
+  --fc-border: #e2e8f0;
+  --fc-card: #ffffff;
+  --fc-warning: #b45309;
+  --fc-danger: #b91c1c;
+  --fc-success: #047857;
+  --radius: 14px;
+}
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: var(--fc-ink);
+  --font-sans: var(--font-space-grotesk);
+  --radius: var(--radius);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #ffffff;
+  color: var(--fc-ink);
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--fc-border);
+}

@@ -1,0 +1,26 @@
+{
+  "name": "feedclassqrscanner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "npm --prefix ./feedclassqrscanner run dev",
+    "build": "npm --prefix ./feedclassqrscanner run build",
+    "start": "npm --prefix ./feedclassqrscanner run start",
+    "lint": "npm --prefix ./feedclassqrscanner run lint",
+    "api": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@zxing/browser": "^0.1.5",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "mysql2": "^3.11.3"
+  }
+}

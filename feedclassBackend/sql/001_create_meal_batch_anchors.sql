@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS meal_batch_anchors (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  school_id VARCHAR(64) NOT NULL,
+  serve_date DATE NOT NULL,
+  batch_version INT UNSIGNED NOT NULL DEFAULT 1,
+  meal_count INT UNSIGNED NOT NULL,
+  merkle_root CHAR(66) NOT NULL,
+  tx_hash CHAR(66) DEFAULT NULL,
+  block_number BIGINT UNSIGNED DEFAULT NULL,
+  network VARCHAR(64) NOT NULL,
+  contract_address CHAR(42) NOT NULL,
+  status ENUM('PENDING', 'SUBMITTED', 'CONFIRMED', 'FAILED') NOT NULL DEFAULT 'PENDING',
+  failure_reason TEXT DEFAULT NULL,
+  retry_count INT UNSIGNED NOT NULL DEFAULT 0,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  confirmed_at TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_meal_batch_anchor (school_id, serve_date, batch_version),
+  KEY idx_meal_batch_anchor_status (status),
+  KEY idx_meal_batch_anchor_date (serve_date)
+);
